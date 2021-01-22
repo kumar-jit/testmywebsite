@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feed Back</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <style>
+            .dark{
+                background-color: rgb(7, 7, 48);
+                color: rgba(255, 255, 255, 0.753);
+            }
+            .white{
+                background-color: rgb(255, 255, 255);
+                color: rgb(7, 7, 48);
+            }
+            .contain{
+                margin-top: 40%;
+                width: auto;
+                /* border: 1px solid black; */
+            }
+            /* .textCount{
+                position: absolute;
+                color: red;
+                z-index: 2;
+                top: 350px;
+                left: 500px;
+            } */
+
+            .revfrom{
+                
+            }
+            .textCount{
+                float: right;
+                margin-right: 20px;
+                
+            }
+            .buttonSubmit{
+                margin-top: 30px;
+                display: flex;
+                
+                float: right;
+            }
+            .b{
+                margin-right: 100px;
+            }
+            .s{
+                margin-right: 30px;
+            }
+
+            .custbs{
+                border: 1px solid rgba(34, 129, 253, 0.466);
+                border-radius: 5px;
+                padding: 5px 20px;
+                background-color: rgba(4, 25, 95, 0.685);
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+            .custbs:hover{
+                background-color: rgba(4, 25, 95, 0.384);
+                color: rgba(255, 255, 255, 0.596);
+            }
+            .custbc{
+                border: 1px solid rgba(253, 34, 118, 0.466);
+                border-radius: 5px;
+                padding: 5px 20px;
+                background-color: rgba(168, 17, 17, 0.616);
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+            }
+            .custbc:hover{
+                border: 1px solid rgba(253, 34, 118, 0.466);
+                background-color: rgba(168, 17, 17, 0.397);
+                color: rgba(255, 255, 255, 0.596);
+            }
+        </style>
+    </head>
+
+    <body class="dark" id="dark">
+        <div>
+            <button style="display: flex;float: right;" class="custbs" id="darkbutton" onclick="darkmodeOn()">Dark Mode</button>
+        </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                
+              <div class="contain">
+                  <div class="revfrom">
+                    
+                      <form style="text-align: center;">
+                        <label for="texta" style="font-size: 40px;">Review Us</label>
+                          <textarea class="darktextarea" maxlength="100"
+                          style="resize: none;display:block;padding: 5px 20px;"
+                          cols=47 rows=7 id="data"
+                          onkeyup="countChars('data','charcount');"
+                          onkeydown="countChars('data','charcount');"
+                          onmouseout="countChars('data','charcount');"></textarea>
+                      </form>
+                    <DIV class="textCount">
+                        <span id="charcount">0/100</span>
+                    </DIV>
+                  </div>
+                  <div class="buttonSubmit">
+                      
+                      <div class="b">
+                        <button class="custbc">Clear</button>
+                      </div>
+                      <div class="s">
+                        <button class="custbs">Submit</button>
+                      </div>
+                      
+                  </div>
+              </div>
+
+            </div>
+        </div>
+    </body>
+</html>
+<script>
+    function countChars(data,display) {
+      var len = document.getElementById(data).value.length;
+      document.getElementById(display).innerHTML = len+"/100";
+    }
+
+
+    function darkmodeOn()
+        {
+        var el = document.getElementById("dark");
+        var currentClass = el.getAttribute("class");
+        if(currentClass == 'dark')
+        {
+            el.setAttribute("class", "white");
+        } else {
+            el.setAttribute("class", "dark");
+        }
+
+        }
+</script>
